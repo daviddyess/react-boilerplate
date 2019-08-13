@@ -13,7 +13,7 @@ Most things relevant to create-react-app should also apply to this boilerplate.
 - This project has changed the PORT environment variable to `3006`.
 - REACT_APP_HTML_TITLE sets the HTML `<title>` tag (using Helmet).
   - Note: In development mode (`npm start`), the server has to be restarted for this to take effect.
-- See [here](https://create-react-app.dev/docs/advanced-configuration) and [here](https://create-react-app.dev/docs/adding-custom-environment-variables) for more details regarding .env varibles and usage.
+- See [here](https://create-react-app.dev/docs/advanced-configuration) and [here](https://create-react-app.dev/docs/adding-custom-environment-variables) for more details regarding .env variables and usage.
 
 ## Available Scripts
 
