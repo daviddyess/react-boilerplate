@@ -20,11 +20,18 @@ class Home extends Component {
     return (
       <Fragment>
         <div className="App">
-          <Helmet title="Home" />
+          <Helmet title="PopOver Example" />
           <header className="App-header">
+            <OverlayTrigger
+              trigger="click"
+              placement="right"
+              overlay={this.popover()}
+            >
+              <Button variant="success">Click me to see</Button>
+            </OverlayTrigger>
             <img src={logo} className="App-logo" alt="logo" />
             <p>
-              Edit <code>src/pages/Home.js</code> and save to reload.
+              Edit <code>src/pages/PopOver.js</code> and save to reload.
             </p>
             <a
               className="App-link"
@@ -42,13 +49,6 @@ class Home extends Component {
                 React Boilerplate on GitHub
               </a>
             </p>
-            <OverlayTrigger
-              trigger="click"
-              placement="right"
-              overlay={this.popover()}
-            >
-              <Button variant="success">Click me to see</Button>
-            </OverlayTrigger>
           </header>
         </div>
       </Fragment>
