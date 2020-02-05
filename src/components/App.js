@@ -10,7 +10,10 @@ export class App extends Component {
   render() {
     return (
       <Fragment>
-        <Helmet titleTemplate={`%s | ${process.env.REACT_APP_HTML_TITLE}`} />
+        <Helmet
+          defaultTitle={process.env.REACT_APP_HTML_TITLE}
+          titleTemplate={`%s | ${process.env.REACT_APP_HTML_TITLE}`} 
+        />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/popover" component={PopOver} />
