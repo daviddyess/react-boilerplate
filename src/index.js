@@ -11,7 +11,6 @@ import rootReducer from './redux/reducers';
 
 import './icons';
 import './index.scss';
-import "bootstrap/dist/css/bootstrap.css";
 
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
@@ -34,14 +33,14 @@ if (module.hot) {
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/">
     <LastLocationProvider>
       <Provider store={store}>
         <App />
       </Provider>
     </LastLocationProvider>
   </Router>,
-document.getElementById('root')
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

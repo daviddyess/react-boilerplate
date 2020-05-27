@@ -1,1 +1,7 @@
-@import './sass/styles';
+@import "~bootswatch/dist/darkly/variables";
+@import "sass/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/darkly/bootswatch";
+
+@import "sass/styles";
+@import "sass/app";
