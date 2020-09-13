@@ -1,46 +1,54 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-export class Breadcrumbs extends Component {
-  static propTypes = {
+export default function Breadcrumbs({ active, base, links }) {
+  Breadcrumbs.propTypes = {
     base: PropTypes.string,
-    links: PropTypes.array,
+    links: PropTypes.arrayOf(PropTypes.object),
     active: PropTypes.string
   };
 
-  basePath(base) {
+  const BasePath = () => {
+    const Home = () => {
+      return (
+        <li className="breadcrumb-item">
+          <Link to="/">Home</Link>
+        </li>
+      );
+    };
+
     switch (base) {
-      default:
+      case 'admin':
         return (
-          <li className="breadcrumb-item">
-            <Link to="/">Home</Link>
-          </li>
+          <Fragment>
+            <Home />
+            <li className="breadcrumb-item">
+              <Link to="/admin">Admin</Link>
+            </li>
+          </Fragment>
         );
+      default:
+        return <Home />;
     }
-  }
+  };
 
-  render() {
-    const { active, base, links } = this.props;
-    return (
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          {this.basePath(base)}
-          {links &&
-            links.map((item, index) => {
-              return (
-                <li key={index} className="breadcrumb-item">
-                  <Link to={item.url}>{item.name}</Link>
-                </li>
-              );
-            })}
-          <li className="breadcrumb-item active" aria-current="page">
-            <span className="active">{active}</span>
-          </li>
-        </ol>
-      </nav>
-    );
-  }
+  return (
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumb">
+        <BasePath />
+        {links &&
+          links.map((item, index) => {
+            return (
+              <li key={index} className="breadcrumb-item">
+                <Link to={item.url}>{item.name}</Link>
+              </li>
+            );
+          })}
+        <li className="breadcrumb-item active" aria-current="page">
+          <span className="active">{active}</span>
+        </li>
+      </ol>
+    </nav>
+  );
 }
-
-export default Breadcrumbs;

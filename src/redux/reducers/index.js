@@ -1,10 +1,7 @@
 import { combineReducers } from 'redux';
 
 // Repeat imports for each reducer
-import {
-  reducer as example,
-  initialState as exampleState
-} from './example';
+import { reducer as example, initialState as exampleState } from './example';
 
 // Add Each to be included in initialState (comma separated: example: exampleState, app: appState, toast: toastState)
 export const initialState = {

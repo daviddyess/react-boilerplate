@@ -12,12 +12,12 @@ const requestExample = () => ({
   type: types.REQUEST_EXAMPLE
 });
 
-const requestExampleSuccess = names => ({
+const requestExampleSuccess = (names) => ({
   type: types.REQUEST_EXAMPLE_SUCCESS,
   names
 });
 
-const requestExampleFailure = error => ({
+const requestExampleFailure = (error) => ({
   type: types.REQUEST_EXAMPLE_FAILURE,
   error
 });
@@ -28,7 +28,7 @@ export const actions = {
   requestExampleFailure
 };
 // Initial State
-// The beginning of your State, used in the 
+// The beginning of your State, used in the
 export const initialState = {
   collection: []
 };

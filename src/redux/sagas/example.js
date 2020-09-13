@@ -18,7 +18,7 @@ function* requestExampleWorker() {
      * If Collection is empty, use an API call to fetch the data
      * @uses REACT_APP_API_URL in ENV (.env) for the API server address
      */
-    if(collection.length === 0){
+    if (collection.length === 0) {
       let endpoint = {};
       endpoint = {
         url: '/api/path/example',
@@ -69,5 +69,5 @@ export const watchers = {
  * Export Watchers
  */
 export default function* saga() {
-  yield all(Object.values(watchers).map(watcher => watcher()));
+  yield all(Object.values(watchers).map((watcher) => watcher()));
 }
